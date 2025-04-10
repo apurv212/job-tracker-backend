@@ -20,7 +20,9 @@ mongoose.connect(process.env.MONGO_URI, {
 // routes
 const applicationRoutes = require('./routes/applicationRoutes');
 app.use('/api/applications', applicationRoutes);
-
+app.get('/',(req,res)=>{
+    res.send('Server is healthy')
+})
 // Server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
